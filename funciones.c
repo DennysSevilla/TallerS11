@@ -77,8 +77,16 @@ void registrarLibro(Libro biblioteca[], int *cantidad) {
     fgets(biblioteca[*cantidad].autor, LEN_AUTOR, stdin);
     eliminarSaltoLinea(biblioteca[*cantidad].autor);
 
-    printf("Ingrese Anio de publicacion: ");
-    biblioteca[*cantidad].anio = leerEnteroPositivo();
+    do{
+        printf("Ingrese Anio de publicacion: ");
+        biblioteca[*cantidad].anio = leerEnteroPositivo();
+        if (biblioteca[*cantidad].anio <=1 && biblioteca[*cantidad].anio<2025){
+            anioV=1;
+        } else {
+            printf("Error: El anio debe estar entre 1 y 2025.\n");
+            anioV=0;
+        }
+    }while (anioV!=1);
     strcpy(biblioteca[*cantidad].estado, "Disponible");
     (*cantidad)++; 
     printf("Libro registrado exitosamente.\n");
@@ -191,4 +199,5 @@ void eliminarLibro(Libro biblioteca[], int *cantidad) {
     }
 
     if (!encontrado) printf("Libro con ID %d no encontrado.\n", idBusq);
+
 }
