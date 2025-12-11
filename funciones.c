@@ -81,7 +81,7 @@ void registrarLibro(Libro biblioteca[], int *cantidad) {
     do{
         printf("Ingrese Anio de publicacion: ");
         biblioteca[*cantidad].anio = leerEnteroPositivo();
-        if (biblioteca[*cantidad].anio <=1 && biblioteca[*cantidad].anio<2025){
+        if (biblioteca[*cantidad].anio >=1 && biblioteca[*cantidad].anio<2025){
             anioV=1;
         } else {
             printf("Error: El anio debe estar entre 1 y 2025.\n");
@@ -202,4 +202,5 @@ void eliminarLibro(Libro biblioteca[], int *cantidad) {
     if (!encontrado) printf("Libro con ID %d no encontrado.\n", idBusq);
 
 }
+
 
