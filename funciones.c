@@ -52,6 +52,7 @@ void registrarLibro(Libro biblioteca[], int *cantidad) {
     
     int idTemp;
     int unico = 0;
+    int anioV = 0;
 
     do {
         unico = 1;
@@ -201,3 +202,4 @@ void eliminarLibro(Libro biblioteca[], int *cantidad) {
     if (!encontrado) printf("Libro con ID %d no encontrado.\n", idBusq);
 
 }
+
